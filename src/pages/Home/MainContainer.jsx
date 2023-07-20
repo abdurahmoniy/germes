@@ -4,6 +4,10 @@ import img from '../../assets/1.png'
 import capimg1 from '../../assets/Icons/capimg1.png'
 import capimg2 from '../../assets/Icons/capimg2.png'
 import capimg3 from '../../assets/Icons/capimg3.png'
+import img1 from '../../assets/img1.png'
+import img2 from '../../assets/img2.png'
+import img3 from '../../assets/img3.png'
+import AddCont from "./AddCont";
 
 export default function MainContainer() {
     const [prod, setProd] = useState([
@@ -107,17 +111,45 @@ export default function MainContainer() {
             url: '#'
         },
     ])
+    const [first, setfirst] = useState([
+      {
+        id: 1,
+        img: img1,
+        title: 'Аэропорт Казань',
+        desc: 'Комплекс услуг по доставке товара на  Ваш строительный объект. Комплекс  услуг по доставке.',
+        url: '#'
+      },
+      {
+        id: 2,
+        img: img2,
+        title: 'Аэропорт Казань',
+        desc: 'Комплекс услуг по доставке товара на  Ваш строительный объект. Комплекс  услуг по доставке.',
+        url: '#'
+      },
+      {
+        id: 3,
+        img: img3,
+        title: 'Аэропорт Казань',
+        desc: 'Комплекс услуг по доставке товара на  Ваш строительный объект. Комплекс  услуг по доставке.',
+        url: '#'
+      },
+    ])
   return (
     <div>
-      <div className="flex justify-between items-center">
-        <div className="text-[36px]">Спецпредложения</div>
-        <a href="#" className="flex items-center text-[#D41A36]">
-          Перейти в раздел скидок
-          <i class="fa fa-arrow-right mx-2" aria-hidden="true"></i>
-        </a>
+      <div className="main">
+        <div className="flex justify-between items-center">
+          <div className="text-[36px]">Спецпредложения</div>
+          <a href="#" className="flex items-center text-[#D41A36]">
+            Перейти в раздел скидок
+            <i class="fa fa-arrow-right mx-2" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div className="">
+          <Card prod={prod}/>
+        </div>
       </div>
-      <div className="">
-        <Card prod={prod}/>
+      <div className="additional">
+        <AddCont first={first}/>
       </div>
     </div>
   );

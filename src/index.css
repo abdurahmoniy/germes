@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.bo_shdw{
-    box-shadow: 0px 1px 10px 0px #D0D0D040;
+.bo_shdw {
+  box-shadow: 0px 1px 10px 0px #d0d0d040;
 }
 
 input:focus {
-    outline: none;
-    border: none;
-    box-shadow: none;
-  }
-  
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.out_off {
+  outline: 1px solid #fff;
+  outline-offset: -15px;
+  padding: 40px;
+}
