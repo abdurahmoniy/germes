@@ -33,15 +33,14 @@ export default function Home() {
       title: "Работаем 7 дней в неделю",
     },
   ];
+  const maxItem = 2;
   return (
     <div>
-      <div className="px-60">
-        <Header />
-      </div>
+      <div className="md:px-20 lg:px-60 sm:px-12 px-4"><Header /></div>
       <hr />
-      <div className="flex px-60">
+      <div className="sm:flex block md:px-20 lg:px-60 sm:px-12 px-4">
         <CategoryList />
-        <div className="promotions w-full pl-8">
+        <div className="promotions w-full pl-8 hidden sm:block">
           <div className="top flex justify-between items-center py-6">
             <div className="text-[#D41A36] px-2">Акции</div>
             <div className="search flex justify-center items-center border rounded-md p-2 text-[12px] w-[248px]">
@@ -107,17 +106,43 @@ export default function Home() {
             {items.map((item) => (
               <div className="flex w-[250px] items-center" key={item.id}>
                 <img src={item.icon} alt="" />
-                <div className="text-[12px] text-[#272727] m-2">{item.title}</div>
+                <div className="text-[12px] text-[#272727] m-2">
+                  {item.title}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="block sm:hidden">
+          <div className="bg_mob text-center text-white py-12 rounded-xl">
+            <div className="text-[18px] font-bold">
+              Лако-красочные материалы
+            </div>
+            <div className="text-[12px] my-4">
+              Скидки 30% на немецкую продукцию <br /> Alpina на нашем сайте
+            </div>
+            <a
+              href="#"
+              className="px-3 py-2 bg-transparent text-white my-3 border-white border rounded-sm text-[12px]"
+            >
+              Перейти в каталог
+            </a>
+          </div>
+          <div className="flex justify-between my-4">
+            {items.slice(0, maxItem).map((item) => (
+              <div className="flex w-[250px] items-center" key={item.id}>
+                <img src={item.icon} alt="" />
+                <div className="text-[8px] text-[#272727] m-2">{item.title}</div>
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="px-60">
-        <MainContainer/>
+      <div className="md:px-20 lg:px-60 sm:px-12 px-4">
+        <MainContainer />
       </div>
-      <div className="px-60 bg-[#F7F7F7] py-14">
-        <Footer/>
+      <div className="md:px-20 lg:px-60 sm:px-12 px-4 bg-[#F7F7F7] py-14">
+        <Footer />
       </div>
     </div>
   );

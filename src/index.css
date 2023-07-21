@@ -16,10 +16,37 @@ input:focus {
   outline-offset: -15px;
   padding: 40px;
 }
-.shadowb{
-  box-shadow: 0px 1px 20px 0px #D0D0D066;
+.shadowb {
+  box-shadow: 0px 1px 20px 0px #d0d0d066;
 }
-.hov_con:hover i{
+.hov_con:hover i {
   color: #fff;
-  transition: all .5s;
+  transition: all 0.5s;
+}
+.bg_mob {
+  background-image: url(./assets/mobban.png);
+  background-size: cover;
+}
+.bo_shdw {
+  display: none;
+}
+
+.bo_shdw_visible {
+  display: block;
+  animation: bo_shdw 0.5s ease-in-out both;
+}
+@keyframes bo_shdw {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 400px){
+  .out_off {
+    outline: none;
+  }
 }

@@ -20,7 +20,7 @@ import b7 from "../../assets/bottom/7.png";
 import AddCont from "./AddCont";
 
 export default function MainContainer() {
-  const [prod, setProd] = useState([
+  const prod = [
     {
       id: 1,
       title: "Кирпич облицовочный M95 Воткинский",
@@ -120,8 +120,8 @@ export default function MainContainer() {
       cap: capimg3,
       url: "#",
     },
-  ]);
-  const [first, setfirst] = useState([
+  ];
+  const first = [
     {
       id: 1,
       img: img1,
@@ -143,8 +143,8 @@ export default function MainContainer() {
       desc: "Комплекс услуг по доставке товара на Ваш строительный объект. Комплекс услуг по доставке.",
       url: "#",
     },
-  ]);
-  const [second, setsecond] = useState([
+  ];
+  const second = [
     {
       id: 1,
       img: "fa-solid fa-truck",
@@ -169,8 +169,8 @@ export default function MainContainer() {
       title: "Сезонное хранение",
       desc: "Хранение стройматериалов приобретенных зимой",
     },
-  ]);
-  const [third, setthird] = useState([
+  ];
+  const third = [
     {
       id: 1,
       img: img4,
@@ -183,8 +183,8 @@ export default function MainContainer() {
       id: 3,
       img: img6,
     },
-  ]);
-  const [bottom, setbottom] = useState([
+  ];
+  const bottom = [
     {
       id: 1,
       img: b1,
@@ -213,13 +213,13 @@ export default function MainContainer() {
       id: 7,
       img: b7,
     },
-  ]);
+  ];
   return (
     <div>
       <div className="main">
-        <div className="flex justify-between items-center">
-          <div className="text-[36px]">Спецпредложения</div>
-          <a href="#" className="flex items-center text-[#D41A36]">
+        <div className="flex justify-center sm:justify-between items-center">
+          <div className="text-[28px] sm:text-[36px]">Спецпредложения</div>
+          <a href="#" className="hidden sm:flex items-center text-[#D41A36]">
             Перейти в раздел скидок
             <i class="fa fa-arrow-right mx-2" aria-hidden="true"></i>
           </a>
