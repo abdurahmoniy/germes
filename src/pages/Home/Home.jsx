@@ -8,6 +8,7 @@ import icon2 from "../../assets/Icons/Icon (1).png";
 import icon3 from "../../assets/Icons/Icon (2).png";
 import icon4 from "../../assets/Icons/Icon (3).png";
 import MainContainer from "./MainContainer";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   const items = [
@@ -114,6 +115,9 @@ export default function Home() {
       </div>
       <div className="px-60">
         <MainContainer/>
+      </div>
+      <div className="px-60 bg-[#F7F7F7] py-14">
+        <Footer/>
       </div>
     </div>
   );
