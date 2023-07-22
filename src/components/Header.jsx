@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/germes_logo.png";
 import star from "../assets/Icons/Star/Main.png";
 import cart from "../assets/Icons/Cart/Main.png";
 import hamb from "../assets/hamb.png";
 
 export default function Header() {
+  const [navToggle, setnavToggle] = useState(false);
+
+  const handleNav = () => {
+    setnavToggle((prevState) => !prevState);
+  };
+
   return (
     <div className="">
       <div className="hidden sm:flex justify-between items-center h-[111px]">
@@ -48,8 +54,43 @@ export default function Header() {
           <a href="#">
             <i class="fa fa-phone" aria-hidden="true"></i>
           </a>
-          <div className="mobToggle mx-4">
-            <img src={hamb} alt="" className="w-[25px]"/>
+          <div className="mobToggle mx-4" onClick={handleNav}>
+            <img src={hamb} alt="" className="w-[25px]" />
+          </div>
+        </div>
+        <div
+          className={`${
+            navToggle ? "closeRespMenu" : "openRespMenu"
+          } fixed resp_menu h-[100vh] top-0 left-0 w-[70%] text-[15px] block bg-[#5662cb] text-white justify-between p-10`}
+        >
+          <a href="#">
+            <img src={logo} className="w-[150px] py-4" alt="" />
+          </a>
+          <div>
+            <a
+              href="#"
+              className="w-full py-2 inline-block hover:text-[#272727] duration-300"
+            >
+              Услуги
+            </a>
+            <a
+              href="#"
+              className="w-full py-2 inline-block hover:text-[#272727] duration-300"
+            >
+              Доставка
+            </a>
+            <a
+              href="#"
+              className="w-full py-2 inline-block hover:text-[#272727] duration-300"
+            >
+              Оплата
+            </a>
+            <a
+              href="#"
+              className="w-full py-2 inline-block hover:text-[#272727] duration-300"
+            >
+              Проекты
+            </a>
           </div>
         </div>
       </div>

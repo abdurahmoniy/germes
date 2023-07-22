@@ -22,7 +22,7 @@ const AddCont = ({ first, second, third, bottom }) => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="w-[150px] sm:w-[430px] sm:h-[260px] h-[120px]">
+              <div className="zind w-[150px] sm:w-[430px] sm:h-[260px] h-[120px]">
                 <img src={item.img} alt="" />
               </div>
               <div

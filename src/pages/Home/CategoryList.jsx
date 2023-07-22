@@ -62,7 +62,7 @@ export default function CategoryList() {
           <img src={icon1} alt="" className="p-2 mx-2" />
           Каталог
         </div>
-        <div className="bo_shdw">
+        <div className="box_shdw">
           {catgitems.map((item) => (
             <a href="#" key={item.id} className="flex justify-between p-2">
               <div className={`text-[${item.text_color}]`}>{item.title}</div>
@@ -74,24 +74,24 @@ export default function CategoryList() {
         </div>
       </div>
       <div className="mobileCat py-6 block sm:hidden">
-      <div
-        className="h-[40px] flex bg-[#5661CB] text-white items-center rounded-md justify-between"
-        onClick={handleToggleCategoryList} // Toggle the category list on button click
-      >
-        <img src={icon1} alt="" className="mobileCat_btn p-2 mx-2" />
-        Каталог товаров
-        <i className="fa fa-search mx-2 p-2" aria-hidden="true"></i>
-      </div>
+        <div
+          className="h-[40px] flex bg-[#5661CB] text-white items-center rounded-md justify-between"
+          onClick={handleToggleCategoryList} // Toggle the category list on button click
+        >
+          <img src={icon1} alt="" className="mobileCat_btn p-2 mx-2" />
+          Каталог товаров
+          <i className="fa fa-search mx-2 p-2" aria-hidden="true"></i>
+        </div>
         <div className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}>
-        {catgitems.map((item) => (
-          <a href="#" key={item.id} className="flex justify-between p-2">
-            <div className={`text-[${item.text_color}]`}>{item.title}</div>
-            <div className="">
-              <i className="fas fa-angle-right"></i>
-            </div>
-          </a>
-        ))}
-      </div>
+          {catgitems.map((item) => (
+            <a href="#" key={item.id} className="flex justify-between p-2">
+              <div className={`text-[${item.text_color}]`}>{item.title}</div>
+              <div className="">
+                <i className="fas fa-angle-right"></i>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

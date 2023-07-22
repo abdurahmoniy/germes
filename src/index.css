@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.bo_shdw {
+.box_shdw, .bo_shdw {
   box-shadow: 0px 1px 10px 0px #d0d0d040;
 }
 
@@ -30,10 +30,24 @@ input:focus {
 .bo_shdw {
   display: none;
 }
-
+.zind img{
+  z-index: -1;
+}
+.resp_menu{
+  z-index: 10;
+}
 .bo_shdw_visible {
   display: block;
   animation: bo_shdw 0.5s ease-in-out both;
+}
+.closeRespMenu{
+  display: none;
+}
+
+.openRespMenu{
+  display: block;
+  animation: respMenu 0.5s ease-in-out both;
+
 }
 @keyframes bo_shdw {
   from {
@@ -43,6 +57,16 @@ input:focus {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes respMenu {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 @media (max-width: 400px){
