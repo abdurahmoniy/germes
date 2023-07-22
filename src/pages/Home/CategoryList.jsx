@@ -56,7 +56,7 @@ export default function CategoryList() {
   };
   return (
     <div className="">
-      <div className="py-6 hidden sm:block">
+      <div className="py-6 hidden lg:block">
         <div className="w-[300px] h-[40px] flex bg-[#5661CB] text-white items-center rounded-md">
           <img src={icon1} alt="" className="p-2 mx-2" />
           Каталог
@@ -72,13 +72,15 @@ export default function CategoryList() {
           ))}
         </div>
       </div>
-      <div className="mobileCat py-6 block sm:hidden">
-        <div
-          className="h-[40px] flex bg-[#5661CB] text-white items-center rounded-md justify-between"
-          onClick={handleToggleCategoryList} // Toggle the category list on button click
-        >
+      <div className="mobileCat py-6 block lg:hidden">
+        <div className="h-[40px] flex bg-[#5661CB] text-white items-center rounded-md justify-between" onClick={handleToggleCategoryList} >
           <img src={icon1} alt="" className="mobileCat_btn p-2 mx-2" />
           Каталог товаров
+          <div className="hidden sm:flex justify-center text-center">
+            <a href="#" className="border-l mx-2 px-2 text-center">Акции</a>
+            <a href="#" className="border-l mx-2 px-2 text-center">О компании</a>
+            <a href="#" className="border-l border-r mx-2 px-2 text-center">Контакты</a>
+          </div>
           <i className="fa fa-search mx-2 p-2" aria-hidden="true"></i>
         </div>
         <div className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}>

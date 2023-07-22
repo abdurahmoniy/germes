@@ -5,7 +5,7 @@ import mast from "../assets/mastercard.png";
 export default function Footer() {
   return (
     <div className="">
-      <div className="hidden sm:block">
+      <div className="hidden md:block">
         <div className="flex justify-between">
           <div className="block">
             <div className="font-bold">Организация</div>
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="block sm:hidden text-center">
+      <div className="block md:hidden text-center">
         <div className="flex text-[14px] justify-center my-2">
           <div className="mx-1">8 (843) 203-93-43</div>
           <div className="mx-1">info@td-germes.ru</div>

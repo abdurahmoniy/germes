@@ -219,7 +219,7 @@ export default function MainContainer() {
       <div className="main">
         <div className="flex justify-center sm:justify-between items-center">
           <div className="text-[28px] sm:text-[36px]">Спецпредложения</div>
-          <a href="#" className="hidden sm:flex items-center text-[#D41A36]">
+          <a href="#" className="hidden md:flex items-center text-[#D41A36]">
             Перейти в раздел скидок
             <i class="fa fa-arrow-right mx-2" aria-hidden="true"></i>
           </a>

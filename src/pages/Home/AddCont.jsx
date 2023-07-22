@@ -3,13 +3,14 @@ import React, { useState } from "react";
 const AddCont = ({ first, second, third, bottom }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const maxItem = 2;
+  const maxItem2 = 3;
   const maxItemBottom = 4;
   return (
     <div>
       <div className="first">
         <div className="flex justify-center sm:justify-between items-center">
           <div className="text-[20px] sm:text-[36px] my-6">Проект из наших стройматериалов</div>
-          <a href="#" className="hidden sm:flex items-center text-[#5661CB]">
+          <a href="#" className="hidden md:flex items-center text-[#5661CB]">
             Смотреть все проекты
             <i className="fa fa-arrow-right mx-2" aria-hidden="true"></i>
           </a>
@@ -22,7 +23,7 @@ const AddCont = ({ first, second, third, bottom }) => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="zind w-[150px] sm:w-[430px] sm:h-[260px] h-[120px]">
+              <div className="zind w-[150px] sm:w-[200px] lg:w-[430px] sm:h-[260px] h-[120px]">
                 <img src={item.img} alt="" />
               </div>
               <div
@@ -52,9 +53,22 @@ const AddCont = ({ first, second, third, bottom }) => {
         <div className="flex justify-between items-center">
           <div className="text-[36px]">Дополнительные услуги</div>
         </div>
-        <div className="block sm:flex justify-between sm:p-10">
+        <div className="hidden md:flex justify-between sm:p-10">
           {second.map((item) => (
-            <div className="w-[350px] hover:bg-[#5661CBE5] hover:text-white text-[#000] rounded-2xl items-center p-8 shadowb duration-300 hov_con">
+            <div className="w-[350px] mx-4 hover:bg-[#5661CBE5] hover:text-white text-[#000] rounded-2xl items-center p-8 shadowb duration-300 hov_con">
+              <i
+                className={`${item.img} bg-[#9FA6EE1A] w-[70px] h-[70px] rounded-full flex justify-center items-center text-[#5661CB]`}
+              ></i>
+              <div className="block py-3">
+                <div className="text-[18px] font-bold">{item.title}</div>
+                <div className="text-[14px]">{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex md:hidden justify-between sm:p-10">
+          {second.slice(0, maxItem2).map((item) => (
+            <div className="w-[300px] mx-4 hover:bg-[#5661CBE5] hover:text-white text-[#000] rounded-2xl items-center p-8 shadowb duration-300 hov_con">
               <i
                 className={`${item.img} bg-[#9FA6EE1A] w-[70px] h-[70px] rounded-full flex justify-center items-center text-[#5661CB]`}
               ></i>
@@ -69,7 +83,7 @@ const AddCont = ({ first, second, third, bottom }) => {
       <div className="third">
         <div className="flex justify-center sm:justify-between items-center my-6">
           <div className="text-[28px] sm:text-[36px]">Наш шоурум</div>
-          <a href="#" className="hidden sm:flex items-center text-[#5661CB]">
+          <a href="#" className="hidden md:flex items-center text-[#5661CB]">
             Перейти в контакты
             <i className="fa fa-arrow-right mx-2" aria-hidden="true"></i>
           </a>
@@ -98,7 +112,7 @@ const AddCont = ({ first, second, third, bottom }) => {
         <div className="">
           <div className="hidden sm:flex justify-between w-full sm:mx-16">
             {bottom.map(item =>(
-              <img src={item.img} className="w-[100px] h-auto"/>
+              <img src={item.img} className="w-[50px] lg:w-[100px] h-auto"/>
             ))}
           </div>
           <div className="flex sm:hidden justify-between w-full">

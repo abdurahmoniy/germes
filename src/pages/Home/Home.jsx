@@ -36,11 +36,11 @@ export default function Home() {
   const maxItem = 2;
   return (
     <div>
-      <div className="md:px-20 lg:px-60 sm:px-12 px-4"><Header /></div>
+      <div className="md:px-20 lg:px-60 sm:px-8 px-4"><Header /></div>
       <hr />
       <div className="sm:flex block md:px-20 lg:px-60 sm:px-12 px-4">
         <CategoryList />
-        <div className="promotions w-full pl-8 hidden sm:block">
+        <div className="promotions w-full pl-8 hidden lg:block">
           <div className="top flex justify-between items-center py-6">
             <div className="text-[#D41A36] px-2">Акции</div>
             <div className="search flex justify-center items-center border rounded-md p-2 text-[12px] w-[248px]">

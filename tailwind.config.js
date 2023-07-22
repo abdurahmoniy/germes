@@ -11,9 +11,6 @@ module.exports = {
         myteal: '#00ADB5',
         mylight: '#EEEEEE'
       },
-      fontFamily:{
-        myfont: ['Montserrat', 'sans-serif'],
-      },
     },
     screens:{
       xs: '480px',

@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <div className="">
-      <div className="hidden sm:flex justify-between items-center h-[111px]">
+      <div className="hidden md:flex justify-between items-center h-[111px]">
         <img src={logo} alt="" />
         <div className="nav text-[15px] flex text-[#494949] justify-between">
           <a href="#" className="mx-5">
@@ -48,7 +48,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="flex sm:hidden justify-between items-center h-[80px]">
+      <div className="flex md:hidden justify-between items-center h-[80px]">
         <img src={logo} alt="" className="w-[120px]" />
         <div className="flex text-[#5661CB] items-center">
           <a href="#">
@@ -61,7 +61,7 @@ export default function Header() {
         <div
           className={`${
             navToggle ? "closeRespMenu" : "openRespMenu"
-          } fixed resp_menu h-[100vh] top-0 left-0 w-[70%] text-[15px] block bg-[#5662cb] text-white justify-between p-10`}
+          } fixed resp_menu h-[100vh] top-0 left-0 w-[70%] sm:w-[45%] text-[15px] block bg-[#5662cb] text-white justify-between p-10`}
         >
           <a href="#">
             <img src={logo} className="w-[150px] py-4" alt="" />

@@ -7,9 +7,9 @@ const Card = ({ prod }) => {
   console.log(prod);
   return (
     <div className="flex justify-center py-8">
-      <div className="hidden sm:grid grid-cols-5 gap-x-14 gap-y-8">
+      <div className="hidden md:grid grid-cols-5 gap-x-14 gap-y-8">
         {prod.map((item) => (
-          <div className="border w-[240px] rounded ">
+          <div className="border w-[240px] rounded">
             <div className="py-2 flex justify-between items-center">
               <img src={item.cap} alt="" className="w-[130px]" />
               <img src={star} alt="" className="mx-2" />
@@ -54,9 +54,9 @@ const Card = ({ prod }) => {
         ))}
       </div>
 
-      <div className="grid sm:hidden grid-cols-2">
+      <div className="grid md:hidden grid-cols-2 sm:grid-cols-3 gap-4">
         {prod.slice(0, maxItems).map((item) => (
-          <div className="">
+          <div className="sm:border">
             <div className="text-center flex justify-center">
               <img src={item.img} alt="" />
             </div>
