@@ -14,18 +14,20 @@ export default function Header() {
   return (
     <div className="">
       <div className="hidden md:flex justify-between items-center h-[111px]">
-        <img src={logo} alt="" />
+        <a href="/">
+          <img src={logo} alt="" />
+        </a>
         <div className="nav text-[15px] flex text-[#494949] justify-between">
-          <a href="#" className="mx-5">
+          <a href="/services" className="mx-5">
             <div className="">Услуги</div>
           </a>
-          <a href="#" className="mx-5">
+          <a href="/delivery" className="mx-5">
             <div className="">Доставка</div>
           </a>
-          <a href="#" className="mx-5">
+          <a href="/payment" className="mx-5">
             <div className="">Оплата</div>
           </a>
-          <a href="#" className="mx-5">
+          <a href="/projects" className="mx-5">
             <div className="">Проекты</div>
           </a>
         </div>

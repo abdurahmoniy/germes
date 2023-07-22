@@ -36,10 +36,6 @@ export default function Home() {
   const maxItem = 2;
   return (
     <div>
-      <div className="md:px-20 lg-[px-36] xl:px-60 px-4">
-        <Header />
-      </div>
-      <hr />
       <div className="block md:px-20 lg-[px-36] xl:px-60 px-4">
         <div className="flex">
           <CategoryList />
@@ -54,10 +50,10 @@ export default function Home() {
                 />
                 <i class="fa fa-search text-[#5661CB]" aria-hidden="true"></i>
               </div>
-              <a href="#" className="text-[16px]">
+              <a href="/about" className="text-[16px]">
                 О КОМПАНИИ
               </a>
-              <a href="#" className="text-[16px]">
+              <a href="/contact" className="text-[16px]">
                 КОНТАКТЫ
               </a>
               <a
@@ -144,9 +140,6 @@ export default function Home() {
       </div>
       <div className="md:px-20 lg-[px-36] xl:px-60 px-4">
         <MainContainer />
-      </div>
-      <div className="md:px-20 lg-[px-36] xl:px-60 px-4 bg-[#F7F7F7] py-14">
-        <Footer />
       </div>
     </div>
   );
