@@ -5,7 +5,7 @@ import cart from "../assets/Icons/Cart/Main.png";
 import hamb from "../assets/hamb.png";
 
 export default function Header() {
-  const [navToggle, setnavToggle] = useState(false);
+  const [navToggle, setnavToggle] = useState(true);
 
   const handleNav = () => {
     setnavToggle((prevState) => !prevState);

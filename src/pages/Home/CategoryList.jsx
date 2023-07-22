@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import icon1 from "../../assets/Icons/Group.png";
-import icon2 from "../../assets/Icons/Vector.png";
 
 export default function CategoryList() {
   const [showCategoryList, setShowCategoryList] = useState(false);
