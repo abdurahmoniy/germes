@@ -39,7 +39,7 @@ export default function Header() {
             </a>
           </div>
           <div className="num block text-center">
-            <div className="text-[20px]">8 (843) 203-93-43</div>
+            <div className="xl:text-[20px]">8 (843) 203-93-43</div>
             <a href="#">
               <div className="text-[13px] text-[#5661CB] underline">
                 заказать обратный звонок

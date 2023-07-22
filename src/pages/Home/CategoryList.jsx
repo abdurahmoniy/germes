@@ -55,7 +55,7 @@ export default function CategoryList() {
     setShowCategoryList((prevState) => !prevState); // Toggle the state when the button is clicked
   };
   return (
-    <div className="">
+    <div className="w-[100%] lg:w-auto">
       <div className="py-6 hidden lg:block">
         <div className="w-[300px] h-[40px] flex bg-[#5661CB] text-white items-center rounded-md">
           <img src={icon1} alt="" className="p-2 mx-2" />
@@ -73,14 +73,32 @@ export default function CategoryList() {
         </div>
       </div>
       <div className="mobileCat py-6 block lg:hidden">
-        <div className="h-[40px] flex bg-[#5661CB] text-white items-center rounded-md justify-between" onClick={handleToggleCategoryList} >
-          <img src={icon1} alt="" className="mobileCat_btn p-2 mx-2" />
-          Каталог товаров
-          <div className="hidden sm:flex justify-center text-center">
-            <a href="#" className="border-l mx-2 px-2 text-center">Акции</a>
-            <a href="#" className="border-l mx-2 px-2 text-center">О компании</a>
-            <a href="#" className="border-l border-r mx-2 px-2 text-center">Контакты</a>
-          </div>
+        <div className="h-[40px] flex bg-[#5661CB] text-white items-center rounded-md justify-between">
+          <img
+            src={icon1}
+            alt=""
+            className="mobileCat_btn p-2 mx-2"
+            onClick={handleToggleCategoryList}
+          />
+          <div className="">Каталог товаров</div>
+          <a
+            href="#"
+            className="h-full items-center hidden sm:flex px-12 text-center border-r border-l"
+          >
+            Акции
+          </a>
+          <a
+            href="#"
+            className="h-full items-center hidden sm:flex text-center"
+          >
+            О компании
+          </a>
+          <a
+            href="#"
+            className="h-full items-center hidden sm:flex mx-2 px-12 text-center border-r border-l"
+          >
+            Контакты
+          </a>
           <i className="fa fa-search mx-2 p-2" aria-hidden="true"></i>
         </div>
         <div className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}>
