@@ -36,7 +36,7 @@ export default function Header() {
             <a href="#" className="mx-3">
               <img src={star} alt="" />
             </a>
-            <a href="#" className="mx-3">
+            <a href="/cart" className="mx-3">
               <img src={cart} alt="" />
             </a>
           </div>
@@ -57,7 +57,11 @@ export default function Header() {
             <i class="fa fa-phone" aria-hidden="true"></i>
           </a>
           <div className="mobToggle mx-4" onClick={handleNav}>
-            <img src={hamb} alt="" className="w-[25px]" />
+            {navToggle ? (
+              <img src={hamb} alt="" className="w-[25px]" />
+            ) : (
+              <i class="fa-solid fa-x text-[25px]"></i>
+            )}
           </div>
         </div>
         <div
@@ -69,6 +73,12 @@ export default function Header() {
             <img src={logo} className="w-[150px] py-4" alt="" />
           </a>
           <div>
+            <a
+              href="#"
+              className="w-full py-2 inline-block hover:text-[#272727] duration-300"
+            >
+              Акции
+            </a>
             <a
               href="#"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
@@ -92,6 +102,18 @@ export default function Header() {
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               Проекты
+            </a>
+            <a
+              href="#"
+              className="w-full py-2 inline-block hover:text-[#272727] duration-300"
+            >
+              О компании
+            </a>
+            <a
+              href="#"
+              className="w-full py-2 inline-block hover:text-[#272727] duration-300"
+            >
+              Контакты
             </a>
           </div>
         </div>

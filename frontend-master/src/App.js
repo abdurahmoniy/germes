@@ -1,15 +1,16 @@
 import "./App.css";
 import { ReactDOM } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Home from "./pages/Home/Home";           
+import Header from "./components/Header";       
+import Footer from "./components/Footer";       
 import Delivery from "./pages/Delivery/Delivery"
 import Projects from "./pages/Projects/Projects"
 import Services from "./pages/Services/Services"
-import Payment from "./pages/Payment/Payment"
-import About from "./pages/About/About";
-import Contact from "./pages/Contact/Contact";
+import Payment from "./pages/Payment/Payment"   
+import About from "./pages/About/About";        
+import Contact from "./pages/Contact/Contact";   
+import Cart from "./pages/Cart/Cart";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
       <div className="md:px-20 lg-[px-36] xl:px-60 px-4 bg-[#F7F7F7] py-14">
