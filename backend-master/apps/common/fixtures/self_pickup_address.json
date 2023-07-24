@@ -1,0 +1,12 @@
+[
+    {
+        "model": "common.SelfPickUpAddress",
+        "pk": "1",
+        "fields": {
+            "name": "InnMall main Warehouse",
+            "address": "Toshkent shahri Yunusobod tumani Rafiqov ko`chasi",
+            "latitude": "41.2994958",
+            "longitude": "69.2400734"
+        }
+    }
+]
