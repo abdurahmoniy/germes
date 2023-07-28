@@ -1,0 +1,41 @@
+// CartPage.js
+import React from "react";
+
+const CartPage = ({ cartItems }) => {
+  return (
+    <div>
+      <h2>Cart Items:</h2>
+      <div className="flex"> 
+        {cartItems.map((item, index) => (
+          <div className="border w-[240px] rounded">
+            <div className="text-center flex justify-center">
+              <img src={item.img} alt="" />
+            </div>
+            <div className="w-full px-2 my-3">
+              <div className="text-[14px] font-semibold">{item.title}</div>
+              <div className="text-[12px] py-1">
+                {item.desc1} <br />
+                {item.desc2}
+              </div>
+              <div className="text-[10px] flex underline">
+                <a href="#">бесплатная доставка</a>
+                <a href="#" className="ml-6 text-green-500">
+                  в наличии
+                </a>
+              </div>
+              <div className="flex items-end py-2">
+                <div className="text-[16px] font-bold">{item.price}</div>
+                <div className="flex text-[12px] mx-2 py-1 items-end">
+                  ₽<div className="px-1">/ шт</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CartPage;

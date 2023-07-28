@@ -19,8 +19,8 @@ import b6 from "../../assets/bottom/6.png";
 import b7 from "../../assets/bottom/7.png";
 import AddCont from "./AddCont";
 
-export default function MainContainer() {
-  const prod = [
+export default function MainContainer({onAddToCart}) {
+  const [prod, setProd] = useState([
     {
       id: 1,
       title: "Кирпич облицовочный M95 Воткинский",
@@ -30,6 +30,8 @@ export default function MainContainer() {
       price: "4500",
       cap: capimg3,
       url: "#",
+      productCode: 1,
+      type: 'Brick'
     },
     {
       id: 2,
@@ -120,7 +122,7 @@ export default function MainContainer() {
       cap: capimg3,
       url: "#",
     },
-  ];
+  ]);
   const first = [
     {
       id: 1,
@@ -226,7 +228,7 @@ export default function MainContainer() {
         </div>
 
         <div className="">
-          <Card prod={prod} />
+          <Card prod={prod} onAddToCart={onAddToCart}/> 
         </div>
       </div>
       <div className="additional">

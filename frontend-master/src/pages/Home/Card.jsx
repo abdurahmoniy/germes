@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import star from "../../assets/Icons/Star/Main.png";
 import cart from "../../assets/Icons/Cart/Main2.png";
+import { Link } from "react-router-dom";
+import ItemDetail from "../../components/ItemDetail";
 
-const Card = ({ prod }) => {
+const Card = ({ prod, onAddToCart }) => {
   const maxItems = 6;
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleOpenModal = (product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null);
+  };
+
+  const handleAddToCart = (product) => {
+    onAddToCart(product); // Call the callback function passed from the parent
+    handleCloseModal();
+  };
   console.log(prod);
   return (
     <div className="flex justify-center py-8">
@@ -35,24 +51,29 @@ const Card = ({ prod }) => {
                   ₽<div className="px-1">/ шт</div>
                 </div>
               </div>
-              <div className="flex">
-                <a
-                  href={item.url}
-                  className="bg-[#5661CB] text-[#fff] text-[14px] py-1 px-2 rounded-sm"
+              <div className="block">
+                {/* <button
+                  className="productDetail bg-[#5661CB] text-[#fff] text-[14px] py-2 w-full rounded-sm"
+                  onClick={() => handleAddToCart(item)}
                 >
-                  Купить в 1 клик
-                </a>
-                <a
-                  href="#"
-                  className=" border-[#5661CB] text-[#5661CB] border rounded-sm py-1 px-3 mx-3"
+                  Добавить в корзину
+                </button> */}
+                <button
+                  className="productDetail bg-[#5661CB] text-[#fff] text-[14px] py-2 w-full rounded-sm"
+                  onClick={() => handleOpenModal(item)}
                 >
-                  <i class="fa fa-check" aria-hidden="true"></i>
-                </a>
+                  Product Detail
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
+      <ItemDetail
+        product={selectedProduct}
+        onClose={handleCloseModal}
+        onAddToCart={handleAddToCart}
+      />
 
       <div className="grid xl:hidden grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {prod.slice(0, maxItems).map((item) => (
@@ -71,10 +92,7 @@ const Card = ({ prod }) => {
                   ₽<div className="px-1">/ шт</div>
                 </div>
               </div>
-              <a
-                href={item.url}
-                className="bg-[#5661CB] text-[#fff] text-[14px] py-2 px-4 rounded-sm"
-              >
+              <a className="addToCart bg-[#5661CB] text-[#fff] text-[14px] py-2 px-4 rounded-sm">
                 Купить в 1 клик
               </a>
             </div>
