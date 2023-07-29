@@ -6,7 +6,7 @@ import img from "../../assets/image.jpg";
 export default function CategoryList({items}) {
   const maxItem = 2;
 
-  const [showCategoryList, setShowCategoryList] = useState(false);
+  const [showCategoryList, setShowCategoryList] = useState(true);
   const catgitems = [
     {
       id: 1,
@@ -56,7 +56,7 @@ export default function CategoryList({items}) {
   ];
 
   const handleToggleCategoryList = () => {
-    setShowCategoryList((prevState) => !prevState); // Toggle the state when the button is clicked
+    setShowCategoryList((prevState) => !prevState);
   };
   return (
     <div className="">

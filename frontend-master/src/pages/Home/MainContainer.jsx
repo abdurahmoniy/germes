@@ -18,111 +18,11 @@ import b5 from "../../assets/bottom/5.png";
 import b6 from "../../assets/bottom/6.png";
 import b7 from "../../assets/bottom/7.png";
 import AddCont from "./AddCont";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../reducers/productReducer";
 
-export default function MainContainer({onAddToCart}) {
-  const [prod, setProd] = useState([
-    {
-      id: 1,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-      productCode: 1,
-      type: 'Brick'
-    },
-    {
-      id: 2,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 3,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 4,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 5,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 6,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 7,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg2,
-      url: "#",
-    },
-    {
-      id: 8,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg1,
-      url: "#",
-    },
-    {
-      id: 9,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      url: "#",
-    },
-    {
-      id: 10,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-  ]);
+const MainContainer = ({ onAddToCart }) => {
+  const products = useSelector((state) => state.products.prod);
   const first = [
     {
       id: 1,
@@ -228,7 +128,7 @@ export default function MainContainer({onAddToCart}) {
         </div>
 
         <div className="">
-          <Card prod={prod} onAddToCart={onAddToCart}/> 
+          <Card prod={products} onAddToCart={onAddToCart} />
         </div>
       </div>
       <div className="additional">
@@ -236,4 +136,5 @@ export default function MainContainer({onAddToCart}) {
       </div>
     </div>
   );
-}
+};
+export default MainContainer;

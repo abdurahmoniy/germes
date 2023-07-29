@@ -1,13 +1,19 @@
-// CartPage.js
-import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-const CartPage = ({ cartItems }) => {
+const CartPage = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  if (cartItems.length === 0) {
+    return <div>Your cart is empty</div>;
+  }
+
   return (
     <div>
       <h2>Cart Items:</h2>
-      <div className="flex"> 
+      <div className="flex">
         {cartItems.map((item, index) => (
-          <div className="border w-[240px] rounded">
+          <div key={index} className="border w-[240px] rounded">
             <div className="text-center flex justify-center">
               <img src={item.img} alt="" />
             </div>
@@ -29,11 +35,15 @@ const CartPage = ({ cartItems }) => {
                   ₽<div className="px-1">/ шт</div>
                 </div>
               </div>
-              
             </div>
           </div>
         ))}
       </div>
+      <Link to="/payment">
+        <button className="py-2 px-4 mt-4 bg-blue-500 text-white rounded">
+          Proceed to Payment
+        </button>
+      </Link>
     </div>
   );
 };

@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 import star from "../../assets/Icons/Star/Main.png";
 import cart from "../../assets/Icons/Cart/Main2.png";
-import { Link } from "react-router-dom";
-import ItemDetail from "../../components/ItemDetail";
+import { Link, useParams } from "react-router-dom";
+import { addToCart } from "../Cart/cartActions";
+import { useDispatch, useSelector } from "react-redux";
 
-const Card = ({ prod, onAddToCart }) => {
+const Card = ({prod}) => {
+  const { slug } = useParams();
+  const pro = prod.find((item) => item.slug === slug);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(pro));
+  };
   const maxItems = 6;
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const handleOpenModal = (product) => {
-    setSelectedProduct(product);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProduct(null);
-  };
-
-  const handleAddToCart = (product) => {
-    onAddToCart(product); // Call the callback function passed from the parent
-    handleCloseModal();
-  };
-  console.log(prod);
   return (
     <div className="flex justify-center py-8">
       <div className="hidden xl:grid grid-cols-5 gap-x-14 gap-y-8">
@@ -51,29 +45,24 @@ const Card = ({ prod, onAddToCart }) => {
                   ₽<div className="px-1">/ шт</div>
                 </div>
               </div>
-              <div className="block">
-                {/* <button
-                  className="productDetail bg-[#5661CB] text-[#fff] text-[14px] py-2 w-full rounded-sm"
-                  onClick={() => handleAddToCart(item)}
-                >
-                  Добавить в корзину
-                </button> */}
-                <button
-                  className="productDetail bg-[#5661CB] text-[#fff] text-[14px] py-2 w-full rounded-sm"
-                  onClick={() => handleOpenModal(item)}
+              <div className="flex justify-between">
+                <Link
+                  to={`/product/${item.slug}`}
+                  className="productDetail bg-[#5661CB] text-[#fff] text-[14px] py-2 rounded-sm w-[75%] text-center"
                 >
                   Product Detail
-                </button>
+                </Link>
+                <div
+                  onClick={() => handleAddToCart(item)} 
+                  className="addToCart border border-[#5661CB] text-[#5661CB] bg-[#fff] text-[14px] py-2 rounded-sm w-[20%] text-center"
+                >
+                  <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <ItemDetail
-        product={selectedProduct}
-        onClose={handleCloseModal}
-        onAddToCart={handleAddToCart}
-      />
 
       <div className="grid xl:hidden grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {prod.slice(0, maxItems).map((item) => (
