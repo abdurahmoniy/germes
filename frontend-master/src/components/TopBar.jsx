@@ -70,7 +70,7 @@ export default function TopBar() {
                         Каталог
                     </div>
                     <div
-                        className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}
+                        className={`bo_shdw absolute w-[300px] bg-white z-10 ${showCategoryList ? "bo_shdw_visible" : ""}`}
                     >
                         {catgitems.map((item) => (
                             <a href="#" key={item.id} className="flex justify-between p-2">
