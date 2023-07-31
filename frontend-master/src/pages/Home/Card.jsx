@@ -6,13 +6,11 @@ import { addToCart } from "../Cart/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const Card = ({prod}) => {
-  const { slug } = useParams();
-  const pro = prod.find((item) => item.slug === slug);
 
   const dispatch = useDispatch();
 
-  const handleAddToCart = () => {
-    dispatch(addToCart(pro));
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
   };
   const maxItems = 6;
   return (
@@ -25,11 +23,10 @@ const Card = ({prod}) => {
               <img src={star} alt="" className="mx-2" />
             </div>
             <div className="text-center flex justify-center">
-              <img src={item.img.main} alt="" />
+              <img src={item.img} alt="" />
             </div>
             <div className="w-full px-2 my-3">
               <div className="text-[14px] font-semibold">{item.title}</div>
-              <div className="text-[14px] font-semibold">{item.adress}</div>
               <div className="text-[12px] py-1">
                 {item.desc1} <br />
                 {item.desc2}

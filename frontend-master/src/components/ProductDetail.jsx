@@ -19,11 +19,11 @@ const ProductDetail = () => {
     }
   };
 
-  const sec1 = product.img.det1;
-  const sec2 = product.img.det2;
-  const sec3 = product.img.det3;
-  const sec4 = product.img.det4;
-  const sec5 = product.img.det5;
+  const sec1 = product.sec.det1;
+  const sec2 = product.sec.det2;
+  const sec3 = product.sec.det3;
+  const sec4 = product.sec.det4;
+  const sec5 = product.sec.det5;
 
   const [currentImage, setCurrentImage] = useState(0);
   const images = [sec5, sec1, sec2, sec3, sec4];
@@ -53,7 +53,6 @@ const ProductDetail = () => {
             <img src={product.cap} alt="" className="py-4 absolute" />
             <div className="top flex justify-between px-2 items-center py-12">
               <div
-                // className="fa fa-angle-left fa-4x"
                 className="fa-4x"
                 aria-hidden="true"
                 onClick={handleAngleLeftClick}
@@ -66,7 +65,6 @@ const ProductDetail = () => {
                 className="w-[250px] h-[150px]"
               />
               <div
-                // className="fa fa-angle-right fa-4x"
                 aria-hidden="true"
                 onClick={handleAngleRightClick}
               >

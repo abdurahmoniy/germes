@@ -3,19 +3,22 @@ import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
-
+  console.log("cartItems", cartItems);
   if (cartItems.length === 0) {
     return <div>Your cart is empty</div>;
   }
 
   return (
     <div>
-      <h2>Cart Items:</h2>
       <div className="flex">
         {cartItems.map((item, index) => (
           <div key={index} className="border w-[240px] rounded">
             <div className="text-center flex justify-center">
-              <img src={item.img.main} alt="" />
+              {item.img ? (
+                <img src={item.img} alt="" />
+              ) : (
+                <div>Image not available</div>
+              )}
             </div>
             <div className="w-full px-2 my-3">
               <div className="text-[14px] font-semibold">{item.title}</div>
