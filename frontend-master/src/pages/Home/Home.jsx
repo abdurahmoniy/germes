@@ -10,7 +10,7 @@ import icon4 from "../../assets/Icons/Icon (3).png";
 import MainContainer from "./MainContainer";
 import Footer from "../../components/Footer";
 
-export default function Home({onAddToCart}) {
+export default function Home({ onAddToCart }) {
   const items = [
     {
       id: 1,
@@ -35,12 +35,8 @@ export default function Home({onAddToCart}) {
   ];
   return (
     <div>
-      <div className="block md:px-20 lg-[px-36] xl:px-60 px-4">
-        <CategoryList items={items}/>
-      </div>
-      <div className="md:px-20 lg-[px-36] xl:px-60 px-4">
-      <MainContainer onAddToCart={onAddToCart}/>
-      </div>
+        <CategoryList items={items} />
+        <MainContainer onAddToCart={onAddToCart} />
     </div>
   );
 }

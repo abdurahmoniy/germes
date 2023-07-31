@@ -15,7 +15,7 @@ const CartPage = () => {
         {cartItems.map((item, index) => (
           <div key={index} className="border w-[240px] rounded">
             <div className="text-center flex justify-center">
-              <img src={item.img} alt="" />
+              <img src={item.img.main} alt="" />
             </div>
             <div className="w-full px-2 my-3">
               <div className="text-[14px] font-semibold">{item.title}</div>

@@ -24,17 +24,19 @@ function App() {
             <Header />
           </div>
           <hr />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/delivery" element={<Delivery />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/product/:slug" element={<ProductDetail />} />
-            <Route path="/cart" element={<CartPage />} />
-          </Routes>
+          <div className="md:px-20 lg-[px-36] xl:px-60 px-4">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/delivery" element={<Delivery />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/product/:slug" element={<ProductDetail />} />
+              <Route path="/cart" element={<CartPage />} />
+            </Routes>
+          </div>
           <div className="md:px-20 lg-[px-36] xl:px-60 px-4 bg-[#F7F7F7] py-14">
             <Footer />
           </div>

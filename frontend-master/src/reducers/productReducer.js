@@ -1,4 +1,9 @@
 import img from "../assets/1.png";
+import img2 from "../assets/2.png";
+import img3 from "../assets/3.png";
+import img4 from "../assets/4.png";
+import img5 from "../assets/5.png";
+import img6 from "../assets/6.png";
 import capimg1 from "../assets/Icons/capimg1.png";
 import capimg2 from "../assets/Icons/capimg2.png";
 import capimg3 from "../assets/Icons/capimg3.png";
@@ -7,104 +12,35 @@ const initialState = {
   prod: [
     {
       id: 1,
-      title: "Кирпич облицовочный M96 Воткинский",
-      img: img,
+      title: "Кирпич облицовочный M96",
+      adress: "Воткинский",
+      longdesc:
+      "На кирпич и камень керамические общие технические условия и стандарты качества, установленные ГОСТ. Эти материалы обладают высокой прочностью, морозостойкостью, негорючестью, небольшая теплопроводность, влагостойкостью. продольное и поперечное. ",
+      img: {
+        main: img,
+        det1: img2,
+        det2: img3,
+        det3: img4,
+        det4: img5,
+        det5: img6,
+      },
+      char: {
+        category: "Кирпич",
+        manufacturer: "Багдановичское ОАО “Огнеупоры”",
+        marc: "M2039",
+        size: "250*120*65",
+        weight: "5.8",
+        watersupply: "9.8",
+        frostresistance: "35",
+        consumption: "26",
+        quantityonpallet: "224",
+        quantityonmachine: "4032",
+        color: "Красный",
+      },
       desc1: "Кол-во на поддоне, шт. - 297",
       desc2: "Формат одинарный",
-      price: "4500",
+      price: "45",
       cap: capimg3,
-      url: "#",
-      productCode: 1,
-      type: "Brick",
-    },
-    {
-      id: 2,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 3,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 4,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 5,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 6,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
-    },
-    {
-      id: 7,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg2,
-      url: "#",
-    },
-    {
-      id: 8,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg1,
-      url: "#",
-    },
-    {
-      id: 9,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      url: "#",
-    },
-    {
-      id: 10,
-      title: "Кирпич облицовочный M95 Воткинский",
-      img: img,
-      desc1: "Кол-во на поддоне, шт. - 297",
-      desc2: "Формат одинарный",
-      price: "4500",
-      cap: capimg3,
-      url: "#",
     },
   ],
   cart: [],
@@ -113,7 +49,7 @@ const generateSlug = (title) => {
   return title.replace(/\s+/g, "-").toLowerCase();
 };
 
-const produ = initialState.prod
+const produ = initialState.prod;
 
 produ.forEach((item) => {
   item.slug = generateSlug(item.title);
