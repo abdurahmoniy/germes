@@ -80,9 +80,20 @@ const Card = ({prod}) => {
                   ₽<div className="px-1">/ шт</div>
                 </div>
               </div>
-              <a className="addToCart bg-[#5661CB] text-[#fff] text-[14px] py-2 px-4 rounded-sm">
-                Купить в 1 клик
-              </a>
+              <div className="flex justify-between">
+                <Link
+                  to={`/product/${item.slug}`}
+                  className="productDetail bg-[#5661CB] text-[#fff] text-[14px] py-2 rounded-sm w-[75%] text-center"
+                >
+                  Product Detail
+                </Link>
+                <div
+                  onClick={() => handleAddToCart(item)} 
+                  className="addToCart border border-[#5661CB] text-[#5661CB] bg-[#fff] text-[14px] py-2 rounded-sm w-[20%] text-center"
+                >
+                  <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
           </div>
         ))}

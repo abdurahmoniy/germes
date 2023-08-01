@@ -70,7 +70,7 @@ export default function Header() {
             navToggle ? "closeRespMenu" : "openRespMenu"
           } fixed resp_menu h-[100vh] top-0 left-0 w-[70%] sm:w-[45%] text-[15px] block bg-[#5662cb] text-white justify-between p-10`}
         >
-          <Link to="#">
+          <Link to="/">
             <img src={logo} className="w-[150px] py-4" alt="" />
           </Link>
           <div>
@@ -116,6 +116,14 @@ export default function Header() {
             >
               Контакты
             </Link>
+            <div className="flex py-4">
+              <Link to="/cart" className="mr-3">
+                  <i class="fa fa-cart-arrow-down text-[20px]" aria-hidden="true"></i>
+              </Link>
+              <Link to="#" className="mx-3">
+                <i class="fa fa-star text-[20px]" aria-hidden="true"></i>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
