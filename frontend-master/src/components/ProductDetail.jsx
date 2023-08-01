@@ -13,20 +13,41 @@ const ProductDetail = () => {
 
   const product = products.find((item) => item.slug === slug);
 
-  const handleAddToCart = () => {
-    if (product) {
-      dispatch(addToCart(product));
-    }
-  };
-
   const sec1 = product.sec.det1;
   const sec2 = product.sec.det2;
   const sec3 = product.sec.det3;
   const sec4 = product.sec.det4;
   const sec5 = product.sec.det5;
 
-  const [currentImage, setCurrentImage] = useState(0);
   const images = [sec5, sec1, sec2, sec3, sec4];
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const [inputValue, setInputValue] = useState("1"); // Set the initial value to 1
+  const [counterValue, setCounterValue] = useState(1);
+
+  const handleAddToCart = () => {
+    if (product) {
+      dispatch(addToCart(product, counterValue));
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setInputValue(value);
+      setCounterValue(Number(value)); // Update the counterValue state here
+    }
+  };
+
+  const handleIncrement = () => {
+    setCounterValue((prevValue) => prevValue + 1);
+    setInputValue((prevValue) => String(Number(prevValue) + 1));
+  };
+
+  const handleDecrement = () => {
+    setCounterValue((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
+    setInputValue((prevValue) => String(Number(prevValue) - 1));
+  };
 
   const handleImageClick = (index) => {
     setCurrentImage(index);
@@ -40,6 +61,8 @@ const ProductDetail = () => {
       (prevImage) => (prevImage - 1 + images.length) % images.length
     );
   };
+
+  const totalPrice = (product.price * counterValue).toFixed(2);
 
   return (
     <div>
@@ -93,10 +116,26 @@ const ProductDetail = () => {
               Товар: на складе в Казани*
               <div className="ml-8">Доставка: в день заказа</div>
             </div>
-            <div className="flex items-end py-2">
+            <div className="flex items-center py-2">
               <div className="text-[50px]">{product.price}</div>
               <div className="flex text-[25px] mx-2 py-3 items-end font-thin">
-                ₽<div className="px-1">/ шт</div>
+                ₽<div className="pt-5">/ шт</div>
+              </div>
+              <div className="block ml-4">
+                <div className="counter border flex px-2 rounded justify-between">
+                  <div className="" onClick={handleDecrement}>
+                    -
+                  </div>
+                  <input
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    className="w-16 text-center"
+                  />
+                  <div className="" onClick={handleIncrement}>
+                    +
+                  </div>
+                </div>
+                <div className="">All : {totalPrice} ₽</div>
               </div>
             </div>
             <div className="text-[14px] text-[#7d7d7d]">Цена со склада</div>

@@ -6,12 +6,13 @@ import { addToCart } from "../Cart/cartActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const Card = ({prod}) => {
-
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+    const counterValue = 1;
+    dispatch(addToCart(product, counterValue));
   };
+
   const maxItems = 6;
   return (
     <div className="flex justify-center py-8">
