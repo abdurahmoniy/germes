@@ -72,11 +72,11 @@ const ProductDetail = () => {
       <div className="block">
         <div className="text-[25px] font-semibold py-6">{product.title}</div>
         <div className="flex w-full gap-4">
-          <div className="border h-[350px] w-[50%]">
+          <div className="border sm:h-[350px] md:w-[50%] w-full">
             <img src={product.cap} alt="" className="py-4 absolute" />
-            <div className="top flex justify-between px-2 items-center py-12">
+            <div className="top flex justify-between sm:justify-center md:justify-between px-2 items-center py-20 sm:py-12">
               <div
-                className="fa-4x"
+                className="sm:hidden md:block block"
                 aria-hidden="true"
                 onClick={handleAngleLeftClick}
               >
@@ -87,11 +87,15 @@ const ProductDetail = () => {
                 alt={`Product ${currentImage + 1}`}
                 className="w-[250px] h-[150px]"
               />
-              <div aria-hidden="true" onClick={handleAngleRightClick}>
+              <div
+                className="sm:hidden md:block block"
+                aria-hidden="true"
+                onClick={handleAngleRightClick}
+              >
                 <img src={right} alt="" />
               </div>
             </div>
-            <div className="bottom flex gap-4 justify-center">
+            <div className="bottom hidden sm:flex gap-4 justify-center">
               {images.map((image, index) => (
                 <img
                   key={index}
@@ -103,14 +107,14 @@ const ProductDetail = () => {
               ))}
             </div>
           </div>
-          <div className="border h-[350px] w-[50%] p-4">
+          <div className="border h-[350px] w-[50%] p-4 hidden sm:block">
             <div className="flex text-[14px]">
               <div className="mr-1 text-[#7d7d7d]">Производитель: </div>
-              <div className="text-[#272727]">{product.char.manufacturer}</div>
+              <div className="text-[#272727]">{product.char[1].value}</div>
             </div>
             <div className="flex text-[14px]">
               <div className="mr-1 text-[#7d7d7d]">Марка прочности: </div>
-              <div className="text-[#272727]">{product.char.marc}</div>
+              <div className="text-[#272727]">{product.char[2].value}</div>
             </div>
             <div className="flex text-[14px] text-[#7d7d7d] py-3">
               Товар: на складе в Казани*
@@ -154,7 +158,7 @@ const ProductDetail = () => {
                 Купить в 1 клик
               </Link>
             </div>
-            <div className="flex py-3">
+            <div className="md:flex py-3 hidden">
               <div className=" flex items-center">
                 <i
                   class="fa fa-truck text-[#5661CB] mr-2"
@@ -174,7 +178,72 @@ const ProductDetail = () => {
             </div>
           </div>
         </div>
-        <div className="flex py-6 w-full">
+        <div className="mobile sm:hidden block py-4">
+          <div className="flex items-center">
+            <div className="text-[14px] text-[#7d7d7d] mr-6">
+              Цена со склада:{" "}
+            </div>
+            <div className="text-[30px]">{product.price}</div>
+            <div className="flex text-[15px] mx-2 py-3 items-end font-thin">
+              ₽<div className="pt-2">/ шт</div>
+            </div>
+          </div>
+          <div className="flex justify-between w-full">
+            <div
+              className="w-[65%] text-center border border-[#5661CB] rounded py-2 text-[14px] hover:bg-[#5661CB] hover:text-[#fff] duration-300 cursor-pointer"
+              onClick={handleAddToCart}
+            >
+              Добавить в корзину
+            </div>
+            <div className="counter border flex px-2 rounded justify-between w-[30%] items-center">
+              <div className="" onClick={handleDecrement}>
+                -
+              </div>
+              <input
+                value={inputValue}
+                onChange={handleInputChange}
+                className="w-16 text-center"
+              />
+              <div className="" onClick={handleIncrement}>
+                +
+              </div>
+            </div>
+          </div>
+          <div
+            // to="/payment"
+            className="w-[100%] my-4 text-center border border-[#5661CB] text-[#fff] bg-[#5661CB] rounded py-2 text-[14px] hover:bg-transparent hover:text-black duration-300"
+            onClick={handleAddToCart}
+          >
+            Купить в 1 клик
+          </div>
+          {product.char.map((item) => (
+            <div className="flex text-[12px] my-1">
+              <div className="text-[#7d7d7d]">
+                {`${item.title}:`}
+              </div>
+              <div className="mx-1">{item.value}</div>
+            </div>
+          ))}
+          <div className="py-3 block">
+              <div className="flex items-center w-full border-[#5661CB] border justify-center py-1 my-2 rounded">
+                <i
+                  class="fa fa-truck text-[#5661CB]"
+                  aria-hidden="true"
+                ></i>
+                <div className="text-[#494949]">Расчет доставки</div>
+              </div>
+              <div className="flex w-full border-[#5661CB] border justify-center py-1 my-2 rounded">
+                <i
+                  class="fa fa-calculator text-[#5661CB]"
+                  aria-hidden="true"
+                ></i>
+                <div className="text-[#494949]">
+                  Онлайн калькулятор
+                </div>
+              </div>
+            </div>
+        </div>
+        <div className="hidden sm:flex py-6 w-full">
           <div className="w-[50%] flex gap-4">
             <div className="block w-full pl-8 pr-2">
               <div className="text-[18px] font-semibold py-2 border-b border-[#9FA6EE]">
@@ -197,17 +266,17 @@ const ProductDetail = () => {
             <div className="text-[18px] font-semibold py-2 border-b border-[#9FA6EE]">
               ОПИСАНИЕ
             </div>
-            <div className="text-[16px] font-[400] w-[650px] py-4">
+            <div className="text-[16px] font-[400] lg:w-[650px] py-4">
               {product.longdesc}
             </div>
             <div className="text-[18px] font-semibold py-2 ">Оплата</div>
             <hr />
-            <div className="text-[16px] font-[400] w-[530px] py-4">
+            <div className="text-[16px] font-[400] lg:w-[530px] py-4">
               Мы принимаем наличные, банковские карты и безналичные расчеты.{" "}
             </div>
             <div className="text-[18px] font-semibold py-2 ">ДОСТАВКа</div>
             <hr />
-            <div className="text-[16px] font-[400] w-[300px] py-4">
+            <div className="text-[16px] font-[400] lg:w-[300px] py-4">
               Бесплатная доставка: 20 км от КазаниСрок доставки: от 2 до 20
               часов с момента подтверждения заказа
             </div>
