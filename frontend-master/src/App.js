@@ -14,6 +14,7 @@ import CartPage from "./pages/Cart/CartPage";
 import ProductDetail from "./components/ProductDetail";
 import store from "./store";
 import { Provider } from "react-redux";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <div className="md:px-20 lg-[px-36] xl:px-60 px-4 bg-[#F7F7F7] py-14">
             <Footer />
           </div>
+          <Analytics />
         </Router>
       </Provider>
     </div>
