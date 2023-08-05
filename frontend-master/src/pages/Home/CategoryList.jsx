@@ -169,18 +169,18 @@ export default function CategoryList({ items }) {
               />
               <i class="fa fa-search text-[#5661CB]" aria-hidden="true"></i>
             </div>
-            <a href="/about" className="text-[16px]">
+            <Link to="/about" className="text-[16px]">
               О КОМПАНИИ
-            </a>
-            <a href="/contact" className="text-[16px]">
+            </Link>
+            <Link to="/contact" className="text-[16px]">
               КОНТАКТЫ
-            </a>
-            <a
-              href=""
+            </Link>
+            <Link
+              to=""
               className="w-[200px] py-1 rounded-md bg-[#5661CB] text-center text-white"
             >
               Оптовый заказ
-            </a>
+            </Link>
           </div>
           <div className="promotions w-full hidden lg:block">
             <div className="xl:border flex rounded-lg xl:bg-[#5D68CF]">
@@ -232,24 +232,24 @@ export default function CategoryList({ items }) {
               onClick={handleToggleCategoryList}
             />
             <div className="">Каталог товаров</div>
-            <a
-              href="#"
+            <Link
+              to="#"
               className="h-full items-center hidden sm:flex px-12 text-center border-r border-l"
             >
               Акции
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="#"
               className="h-full items-center hidden sm:flex text-center"
             >
               О компании
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="#"
               className="h-full items-center hidden sm:flex mx-2 px-12 text-center border-r border-l"
             >
               Контакты
-            </a>
+            </Link>
             <i className="fa fa-search mx-2 p-2" aria-hidden="true"></i>
           </div>
           <div

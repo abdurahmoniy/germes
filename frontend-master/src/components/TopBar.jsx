@@ -80,9 +80,9 @@ export default function TopBar() {
     setShowCategoryList((prevState) => !prevState);
   };
   return (
-    <div className="">
+    <div className="z-10">
       <div className="hidden lg:flex justify-between items-center py-6">
-        <div className="">
+        <div className=" z-10">
           <div className="w-[300px] h-[40px] flex bg-[#5661CB] text-white items-center rounded-md">
             <img
               src={icon1}
@@ -153,12 +153,12 @@ export default function TopBar() {
           />
           <i class="fa fa-search text-[#5661CB]" aria-hidden="true"></i>
         </div>
-        <a href="/about" className="text-[16px]">
+        <Link to="/about" className="text-[16px]">
           О КОМПАНИИ
-        </a>
-        <a href="/contact" className="text-[16px]">
+        </Link>
+        <Link to="/contact" className="text-[16px]">
           КОНТАКТЫ
-        </a>
+        </Link>
         <a
           href=""
           className="w-[200px] py-1 rounded-md bg-[#5661CB] text-center text-white"
@@ -175,34 +175,34 @@ export default function TopBar() {
             onClick={handleToggleCategoryList}
           />
           <div className="">Каталог товаров</div>
-          <a
-            href="#"
+          <Link
+            to="#"
             className="h-full items-center hidden sm:flex px-12 text-center border-r border-l"
           >
             Акции
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="h-full items-center hidden sm:flex text-center"
           >
             О компании
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="h-full items-center hidden sm:flex mx-2 px-12 text-center border-r border-l"
           >
             Контакты
-          </a>
+          </Link>
           <i className="fa fa-search mx-2 p-2" aria-hidden="true"></i>
         </div>
         <div className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}>
           {catgitems.map((item) => (
-            <a href="#" key={item.id} className="flex justify-between p-2">
+            <Link to="#" key={item.id} className="flex justify-between p-2">
               <div className={`text-[${item.text_color}]`}>{item.title}</div>
               <div className="">
                 <i className="fas fa-angle-right"></i>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

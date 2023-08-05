@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import carusel1 from '../assets/carusel1.png';
-import carusel2 from '../assets/carusel2.png';
-import carusel3 from '../assets/carusel3.png';
-import carusel4 from '../assets/carusel4.png'; 
+// import carusel1 from '../assets/carusel1.png';
+// import carusel2 from '../assets/carusel2.png';
+// import carusel3 from '../assets/carusel3.png';
+// import carusel4 from '../assets/carusel4.png'; 
 import './Carousel.css';
 
-export default function Carousel() {
-  const images = [carusel1, carusel2, carusel3, carusel4];
+export default function Carousel({object}) {
+  const images = object || [];
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -20,9 +20,8 @@ export default function Carousel() {
   const handleDotClick = (index) => {
     setActiveIndex(index);
   };
-
   return (
-    <div className="carousel-container h-[315px]">
+    <div className="carousel-container h-[315px] -z-10">
       <div className="carousel">
         {images.map((image, index) => (
           <div
@@ -34,7 +33,7 @@ export default function Carousel() {
               transform: `translateX(-${activeIndex * 100}%)`,
             }}
           >
-            <img src={image} alt={`Slide ${index}`} />
+            <img src={image} alt={`Slide ${index}`} className='-z-10' />
           </div>
         ))}
       </div>
