@@ -15,6 +15,7 @@ import ProductDetail from "./components/ProductDetail";
 import store from "./store";
 import { Provider } from "react-redux";
 import { Analytics } from '@vercel/analytics/react';
+import Categories from "./components/Categories";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/product/:slug" element={<ProductDetail />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/category/:categorySlug/:subCategorySlug" element={<Categories/>} />
             </Routes>
           </div>
           <div className="md:px-20 lg-[px-36] xl:px-60 px-4 bg-[#F7F7F7] py-14">

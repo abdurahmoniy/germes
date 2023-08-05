@@ -51,46 +51,56 @@ input:focus {
 
 }
 
-/* Add this CSS to your stylesheets */
-.modal {
-  display: block;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
+.sub-categories {
+  position: absolute;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  right: 0;
+  /* top: 100%; */
+  /* left: 0; */
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  position: relative;
+.cat_shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+.category:hover .sub-categories {
+  animation: cat 0.3s ease-in-out both;
+  display: block;
 }
 
-.close:hover {
+.sub-category {
+  padding: 8px;
   color: #000;
+  text-decoration: none;
+  background: #f7f7f7;
 }
 
-/* Add any additional styling you need for the modal */
+.sub-category:hover {
+  background-color: #f0f0f0;
+}
+
+.answer {
+  animation: cat 0.3s ease-in-out both;
+}
 
 @keyframes bo_shdw {
   from {
     opacity: 0;
     transform: translateY(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes cat {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
   }
   to {
     opacity: 1;

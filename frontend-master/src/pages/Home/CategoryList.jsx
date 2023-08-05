@@ -2,21 +2,43 @@ import React, { useState } from "react";
 import icon1 from "../../assets/Icons/Group.png";
 import cart from "../../assets/Icons/Cart/Main2.png";
 import img from "../../assets/image.jpg";
+import { Link } from "react-router-dom";
 
-export default function CategoryList({items}) {
+export default function CategoryList({ items }) {
   const maxItem = 2;
-
   const [showCategoryList, setShowCategoryList] = useState(true);
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+
   const catgitems = [
     {
       id: 1,
       title: "Стеновые материалы",
       text_color: "#000",
+      sub_cat: [
+        {
+          id: 1,
+          title: "Кирпич",
+        },
+        {
+          id: 2,
+          title: "Кирпич 2",
+        },
+      ],
     },
     {
       id: 2,
       title: "Фасадные материалы",
       text_color: "#000",
+      sub_cat: [
+        {
+          id: 1,
+          title: "Кирпич",
+        },
+        {
+          id: 2,
+          title: "Кирпич 2",
+        },
+      ],
     },
     {
       id: 3,
@@ -55,6 +77,17 @@ export default function CategoryList({items}) {
     },
   ];
 
+  const generateSlug = (title) => {
+    return title.replace(/\s+/g, "-").toLowerCase();
+  };
+
+  catgitems.forEach((item) => {
+    if (item.sub_cat) {
+      item.sub_cat.forEach((subItem) => {
+        subItem.slug = generateSlug(subItem.title);
+      });
+    }
+  });
   const handleToggleCategoryList = () => {
     setShowCategoryList((prevState) => !prevState);
   };
@@ -63,17 +96,65 @@ export default function CategoryList({items}) {
       <div className="flex justify-between">
         <div className="pt-6 hidden lg:block">
           <div className="w-[300px] h-[40px] flex bg-[#5661CB] text-white items-center rounded-md">
-            <img src={icon1} alt="" className="p-2 mx-2" onClick={handleToggleCategoryList}/>
+            <img
+              src={icon1}
+              alt=""
+              className="p-2 mx-2"
+              onClick={handleToggleCategoryList}
+            />
             Каталог
           </div>
-          <div className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}>
+          <div
+            className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}
+          >
             {catgitems.map((item) => (
-              <a href="#" key={item.id} className="flex justify-between p-2">
-                <div className={`text-[${item.text_color}]`}>{item.title}</div>
-                <div className="">
-                  <i class="fas fa-angle-right"></i>
+              <div className="">
+                <div
+                  key={item.id}
+                  className="category"
+                  onMouseEnter={() => setHoveredCategory(item.id)}
+                  onMouseLeave={() => setHoveredCategory(null)}
+                >
+                  <div
+                    className={`flex justify-between w-full p-2 hover:bg-[#f0f0f0] ${
+                      hoveredCategory === item.id && item.sub_cat
+                        ? "bg-[#f7f7f7] cat_shadow"
+                        : ""
+                    }`}
+                  >
+                    <div className={`text-[${item.text_color}]`}>
+                      {item.title}
+                    </div>
+                    <div className="">
+                      <div
+                        className={`fas fa-angle-right ${
+                          hoveredCategory === item.id && item.sub_cat
+                            ? "rotate-90 duration-300"
+                            : "duration-300"
+                        }`}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="sub-categories">
+                    {hoveredCategory === item.id && item.sub_cat && (
+                      <div className="">
+                        {item.sub_cat.map((subItem) => (
+                          <Link
+                            key={subItem.id}
+                            to={`/category/${generateSlug(item.title)}/${
+                              subItem.slug
+                            }`}
+                            className="sub-category flex justify-between w-full"
+                          >
+                            <div className="">{subItem.title}</div>
+                            <i className="fas fa-angle-right"></i>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
@@ -171,52 +252,54 @@ export default function CategoryList({items}) {
             </a>
             <i className="fa fa-search mx-2 p-2" aria-hidden="true"></i>
           </div>
-          <div className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}>
+          <div
+            className={`bo_shdw ${showCategoryList ? "bo_shdw_visible" : ""}`}
+          >
             {catgitems.map((item) => (
-              <a href="#" key={item.id} className="flex justify-between p-2">
+              <Link
+                to={`/category/${item.slug}`}
+                key={item.id}
+                className="category flex justify-between p-2"
+              >
                 <div className={`text-[${item.text_color}]`}>{item.title}</div>
                 <div className="">
                   <i className="fas fa-angle-right"></i>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </div>
       <div className="block lg:hidden">
-          <div className="bg_mob text-center text-white py-12 rounded-xl">
-            <div className="text-[18px] font-bold">
-              Лако-красочные материалы
-            </div>
-            <div className="text-[12px] my-4">
-              Скидки 30% на немецкую продукцию <br /> Alpina на нашем сайте
-            </div>
-            <a
-              href="#"
-              className="px-3 py-2 bg-transparent text-white my-3 border-white border rounded-sm text-[12px]"
-            >
-              Перейти в каталог
-            </a>
+        <div className="bg_mob text-center text-white py-12 rounded-xl">
+          <div className="text-[18px] font-bold">Лако-красочные материалы</div>
+          <div className="text-[12px] my-4">
+            Скидки 30% на немецкую продукцию <br /> Alpina на нашем сайте
           </div>
-          <div className="flex sm:hidden justify-between my-4">
-            {items.slice(0, maxItem).map((item) => (
-              <div className="flex w-[250px] items-center" key={item.id}>
-                <img src={item.icon} alt="" />
-                <div className="text-[8px] text-[#272727] m-2">
-                  {item.title}
-                </div>
-              </div>
-            ))}
-          </div>
+          <a
+            href="#"
+            className="px-3 py-2 bg-transparent text-white my-3 border-white border rounded-sm text-[12px]"
+          >
+            Перейти в каталог
+          </a>
         </div>
-        <div className="hidden sm:flex justify-between my-4 xl:ml-80">
-          {items.map((item) => (
+        <div className="flex sm:hidden justify-between my-4">
+          {items.slice(0, maxItem).map((item) => (
             <div className="flex w-[250px] items-center" key={item.id}>
               <img src={item.icon} alt="" />
-              <div className="text-[12px] text-[#272727] m-2">{item.title}</div>
+              <div className="text-[8px] text-[#272727] m-2">{item.title}</div>
             </div>
           ))}
         </div>
+      </div>
+      <div className="hidden sm:flex justify-between my-4 xl:ml-80">
+        {items.map((item) => (
+          <div className="flex w-[250px] items-center" key={item.id}>
+            <img src={item.icon} alt="" />
+            <div className="text-[12px] text-[#272727] m-2">{item.title}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
