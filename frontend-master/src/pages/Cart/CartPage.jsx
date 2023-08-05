@@ -38,7 +38,7 @@ const CartPage = () => {
   };
 
   return (
-    <div>
+    <div className=" min-h-screen">
       <TopBar />
       {cartItems.length === 0 ? (
         <div>Your cart is empty</div>
