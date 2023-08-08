@@ -94,8 +94,8 @@ export default function About() {
     <div>
       <TopBar />
       <div className="text-[30px]">О компании</div>
-      <div className="flex w-full py-12 justify-between">
-        <div className="w-[28%] pr-6">
+      <div className="block lg:flex w-full py-12 justify-between">
+        <div className="lg:w-[28%] w-full pr-6">
           <Carousel object={aboutCar}/>
         </div>
         <div className="w-[68%]">
@@ -103,7 +103,7 @@ export default function About() {
             Специализируемся на поставках строительных материалов. <br />{" "}
             Работаем по всей России
           </div>
-          <div className="flex justify-between py-8">
+          <div className="flex flex-wrap justify-between py-8">
             {about.map((item) => (
               <div>
                 <div className="text-[#5661CB] font-bold">
@@ -134,7 +134,7 @@ export default function About() {
       <div className="text-[30px]">Сертификаты</div>
       <div className="flex py-6">
         <img src={certif} alt="" className="w-[280px] main" />
-        <div className="px-2 block">
+        <div className="px-2 hidden lg:block">
           <div className="flex justify-between w-full">
             <div className="bg-[#5661CB] w-[74%] absolute h-[320px] -z-10"></div>
             {about.map((item) => (

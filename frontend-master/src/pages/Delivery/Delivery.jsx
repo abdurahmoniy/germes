@@ -78,7 +78,7 @@ export default function Delivery() {
         <div className="py-4">
           Компания Гермес осуществляет доставку материалов 7 дней в неделю по
           всей территории Российской Федерации.
-          <img src={map_img} alt="" className="my-6 w-[70%]" />
+          <img src={map_img} alt="" className="my-6 lg:w-[70%]" />
         </div>
       </div>
       <Faq faq={faq}/>

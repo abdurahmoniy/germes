@@ -21,7 +21,7 @@ export default function Carousel({object}) {
     setActiveIndex(index);
   };
   return (
-    <div className="carousel-container h-[315px] -z-10">
+    <div className="carousel-container -z-10 my-3 flex justify-center">
       <div className="carousel">
         {images.map((image, index) => (
           <div

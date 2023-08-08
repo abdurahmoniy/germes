@@ -30,7 +30,7 @@ const AddCont = ({ first, second, third, bottom }) => {
                 <Carousel object={item.carusel.map((imgObj) => imgObj.img)} />
               </div>
               <div
-                className="hoverContent w-[150px] sm:w-[240px] lg:w-[350px] xl:w-[430px] h-[93px] sm:h-[146px] lg:h-[213px] xl:h-[262px] bg-[#5661CBE5] text-white rounded-lg flex items-center out_off absolute top-0 left-0"
+                className="hoverContent w-[150px] sm:w-[240px] lg:w-[350px] xl:w-[430px] h-[93px] sm:h-[146px] lg:h-[213px] xl:h-[272px] bg-[#5661CBE5] text-white rounded-lg flex items-center out_off absolute top-0 left-0"
                 style={{
                   opacity: hoveredIndex === index ? 1 : 0,
                   visibility: hoveredIndex === index ? "visible" : "hidden",

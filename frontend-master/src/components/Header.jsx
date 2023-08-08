@@ -75,43 +75,43 @@ export default function Header() {
           </Link>
           <div>
             <Link
-              to="#"
+              to="/"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               Акции
             </Link>
             <Link
-              to="#"
+              to="/services"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               Услуги
             </Link>
             <Link
-              to="#"
+              to="/delivery"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               Доставка
             </Link>
             <Link
-              to="#"
+              to="/payment"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               Оплата
             </Link>
             <Link
-              to="#"
+              to="/projects"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               Проекты
             </Link>
             <Link
-              to="#"
+              to="/about"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               О компании
             </Link>
             <Link
-              to="#"
+              to="/contact"
               className="w-full py-2 inline-block hover:text-[#272727] duration-300"
             >
               Контакты

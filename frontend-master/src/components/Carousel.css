@@ -1,13 +1,6 @@
-.carousel-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .carousel {
   border-radius: 10px;
-  width: 430px;
-  height: 260px;
+  @apply lg:w-[430px] h-full lg:h-[260px];
   display: flex;
   overflow: hidden;
   position: relative;
@@ -25,7 +18,7 @@
 
 .carousel-dots{
   position: absolute;
-  margin-top: 200px;
+  @apply mt-[150px] lg:mt-[200px];
   display: flex;
 }
 

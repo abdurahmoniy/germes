@@ -95,7 +95,7 @@ export default function Contact() {
       <div className="py-4">
         <img src={map} alt="" />
       </div>
-      <div className="flex w-full py-12 justify-between">
+      <div className="block lg:flex w-full py-12 justify-between">
         <div className="w-[68%]">
           <div className="font-bold text-[30px]">Контакты</div>
           <div className="pt-4">
@@ -104,8 +104,8 @@ export default function Contact() {
             высокой прочностью, морозостойкостью, негорючестью, небольшая
             теплопроводность.
           </div>
-          <div className="flex py-2">
-            <div className="block w-[60%]">
+          <div className="bloxk lg:flex py-2">
+            <div className="block lg:w-[60%]">
               <div className="font-semibold text-[20px]">Адреса офисов:</div>
               <div className="py-2">420087, г. Казань, ул.Сары Садыковой 30 <br /> Имеется бесплатная парковка</div>
             </div>
@@ -114,8 +114,8 @@ export default function Contact() {
               <div className="py-2">Пн-Пт 8:30–17:30 <br /> Сб: 9:00–14:00</div>
             </div>
           </div>
-          <div className="flex py-2">
-            <div className="block w-[60%]">
+          <div className="bloxk lg:flex py-2">
+            <div className="block lg:w-[60%]">
               <div className="font-semibold text-[20px]">E-mail:</div>
               <div className="py-2">vavilonkzn@yandex.ru (для заказа строительных материалов) <br /> germescom@mail.ru (для заказа отделочных материалов)</div>
             </div>
@@ -125,7 +125,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="w-[28%] pr-6">
+        <div className="lg:w-[28%] pr-6">
           <Carousel object={aboutCar} />
         </div>
       </div>

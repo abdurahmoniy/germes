@@ -14,9 +14,9 @@ export default function Faq({faq}) {
   return (
     <div>
       <div className="py-2 text-[30px]">Частые вопросы</div>
-      <div className="py-4 grid grid-cols-2 w-[70%]">
+      <div className="py-4 block lg:grid grid-cols-2 lg:w-[70%]">
         {faq.map((item, index) => (
-          <div className="px-4  w-[80%]">
+          <div className="px-4  lg:w-[80%]">
             <div key={index} className="py-4">
               <div
                 className="flex justify-between question items-center cursor-pointer select-none"
@@ -34,7 +34,7 @@ export default function Faq({faq}) {
               </div>
               {expandedIndex === index && (
                 <div
-                  className={`text-[#7e7e7e] answer absolute w-[410px] z-10 bg-white py-2 duration-300 answer select-none ${
+                  className={`text-[#7e7e7e] answer absolute lg:w-[410px] z-10 bg-white py-2 duration-300 answer select-none ${
                     expandedIndex === index ? "expanded" : ""
                   }`}
                 >
