@@ -87,6 +87,29 @@ input:focus {
   animation: cat 0.3s ease-in-out both;
 }
 
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5661CBDE;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 20px;
+  width: 1040px;
+  height: auto;
+  overflow: auto;
+}
+
+
 @keyframes bo_shdw {
   from {
     opacity: 0;

@@ -82,7 +82,7 @@ export default function TopBar() {
   return (
     <div className="z-10">
       <div className="hidden lg:flex justify-between items-center py-6">
-        <div className=" z-10">
+        <div className="">
           <div className="w-[300px] h-[40px] flex bg-[#5661CB] text-white items-center rounded-md">
             <img
               src={icon1}
@@ -93,7 +93,7 @@ export default function TopBar() {
             Каталог
           </div>
           <div
-            className={`bo_shdw absolute w-[300px] bg-white ${showCategoryList ? "bo_shdw_visible" : ""}`}
+            className={`bo_shdw absolute w-[300px] bg-white ${showCategoryList ? "bo_shdw_visible" : ""} z-10`}
           >
             {catgitems.map((item) => (
               <div className="">
