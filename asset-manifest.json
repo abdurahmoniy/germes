@@ -1,22 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.79bf2ada.css",
-    "main.js": "/static/js/main.13da237d.js",
-    "static/media/img1.png": "/static/media/img1.2239581ddde755cb2342.png",
-    "static/media/img5.png": "/static/media/img5.30245d7bc0c763e1cec4.png",
-    "static/media/img3.png": "/static/media/img3.8b965e181ec9a14d998c.png",
-    "static/media/img6.png": "/static/media/img6.c6ddacc61e1d2ec121a5.png",
-    "static/media/img4.png": "/static/media/img4.b534616a820d2293000e.png",
-    "static/media/img2.png": "/static/media/img2.af40fd3f072ef1e4578d.png",
-    "static/media/mobban.png": "/static/media/mobban.b149d145eac6eebe1934.png",
-    "static/media/image.jpg": "/static/media/image.0d616d5225d02ee33b4f.jpg",
-    "static/media/1.png": "/static/media/1.251a7e10512c739fce60.png",
-    "index.html": "/index.html",
-    "main.79bf2ada.css.map": "/static/css/main.79bf2ada.css.map",
-    "main.13da237d.js.map": "/static/js/main.13da237d.js.map"
+    "main.css": "/germes/static/css/main.2d15f8eb.css",
+    "main.js": "/germes/static/js/main.5779538d.js",
+    "static/media/mapfull.png": "/germes/static/media/mapfull.9c02017b2f07dc0ee085.png",
+    "static/media/6.png": "/germes/static/media/6.2d8ce08a0221467fb6a5.png",
+    "static/media/img1.png": "/germes/static/media/img1.2239581ddde755cb2342.png",
+    "static/media/carusel2.png": "/germes/static/media/carusel2.3ccdd2f35df0079cc03e.png",
+    "static/media/carusel4.png": "/germes/static/media/carusel4.3ccdd2f35df0079cc03e.png",
+    "static/media/img5.png": "/germes/static/media/img5.30245d7bc0c763e1cec4.png",
+    "static/media/img3.png": "/germes/static/media/img3.8b965e181ec9a14d998c.png",
+    "static/media/img6.png": "/germes/static/media/img6.c6ddacc61e1d2ec121a5.png",
+    "static/media/img4.png": "/germes/static/media/img4.b534616a820d2293000e.png",
+    "static/media/certificat.png": "/germes/static/media/certificat.588770a0b4368965b897.png",
+    "static/media/img2.png": "/germes/static/media/img2.af40fd3f072ef1e4578d.png",
+    "static/media/carusel1.png": "/germes/static/media/carusel1.1b72a089071b845d5275.png",
+    "static/media/carusel3.png": "/germes/static/media/carusel3.1b72a089071b845d5275.png",
+    "static/media/1.png": "/germes/static/media/1.251a7e10512c739fce60.png",
+    "static/media/mobban.png": "/germes/static/media/mobban.b149d145eac6eebe1934.png",
+    "static/media/map_img.png": "/germes/static/media/map_img.4f471141c2c9ac59aed4.png",
+    "static/media/image.jpg": "/germes/static/media/image.0d616d5225d02ee33b4f.jpg",
+    "static/media/3.png": "/germes/static/media/3.85a5a6484c5c4d1b5850.png",
+    "static/media/4.png": "/germes/static/media/4.077c97937f31e372599b.png",
+    "static/media/2.png": "/germes/static/media/2.1b6f40f37069b78fbfd4.png",
+    "static/media/5.png": "/germes/static/media/5.0eb305f5b07484729228.png",
+    "index.html": "/germes/index.html",
+    "main.2d15f8eb.css.map": "/germes/static/css/main.2d15f8eb.css.map",
+    "main.5779538d.js.map": "/germes/static/js/main.5779538d.js.map"
   },
   "entrypoints": [
-    "static/css/main.79bf2ada.css",
-    "static/js/main.13da237d.js"
+    "static/css/main.2d15f8eb.css",
+    "static/js/main.5779538d.js"
   ]
 }
